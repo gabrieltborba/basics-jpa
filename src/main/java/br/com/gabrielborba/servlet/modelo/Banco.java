@@ -9,23 +9,24 @@ import java.util.Optional;
 public class Banco {
 	
 	private static List<Empresa> lista = new ArrayList<>();
-	private static Integer primaryKey = 1;
+	private static List<Usuario> listaUsuario = new ArrayList<>();
 	private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	
-	 static {
-	        Empresa empresa;
+	 static {    
 			try {
-				empresa = new Empresa(primaryKey,"Alura",sdf.parse("23/12/2021"));
-				lista.add(empresa);
-		        empresa = new Empresa(primaryKey+1,"Caelum",sdf.parse("22/01/1999"));  
-		        lista.add(empresa);
+				lista.add(new Empresa(getSizeEmpresa() + 1,"Alura",sdf.parse("23/12/2021")));
+		        lista.add(new Empresa(getSizeEmpresa()  +1,"Caelum",sdf.parse("22/01/1999")));
+		        
+		        listaUsuario.add(new Usuario("gabriel", "9999"));
+		        listaUsuario.add(new Usuario("millena", "8888"));
+		       
 			} catch (ParseException e) {
 				e.printStackTrace();
 			}	    
 	    }
 
-	public void adiciona(Empresa empresa) {
-		empresa.setId(Banco.primaryKey++);
+	public void adiciona(Empresa empresa) {	
+		empresa.setId(getSizeEmpresa() + 1);
 		Banco.lista.add(empresa);
 	}
 	
@@ -56,6 +57,7 @@ public class Banco {
 	}
 
 	public void alteraEmpresa(Empresa empresa) {
+
 		Optional<Empresa> aux = Banco.lista.stream()
 				.filter(empresaAux -> empresaAux.getId()
 						.equals(empresa.getId())).findFirst();
@@ -67,4 +69,17 @@ public class Banco {
 			
 	}
 
+	private static int getSizeEmpresa() {
+		return Banco.lista.size();
+	}
+
+	public Usuario existeUsuario(String login, String senha) {
+		Optional<Usuario> aux = Banco.listaUsuario.stream()
+				.filter(usuario -> usuario.checkSenha(login, senha)).findFirst();
+		
+		if(!aux.isPresent())
+			return null;	
+		
+		return aux.get();
+	}
 }

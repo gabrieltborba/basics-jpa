@@ -45,7 +45,7 @@ public class EmpresaController extends HttpServlet {
 		
 		String packageName = "br.com.gabrielborba.servlet.services.";
 		String paramAcao = req.getParameter("acao");
-		paramAcao = paramAcao == null ? "ListaEmpresas":paramAcao;
+		paramAcao = paramAcao == null ? "LoginForm":paramAcao;
 		
 		try {
 			Class<?> classe = Class.forName(packageName + paramAcao);

@@ -5,8 +5,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <c:url value="/entrada?acao=RemoveEmpresa&" var="deletaEmpresa"/>
-<c:url value="/entrada?acao=MostraEmpresa&" var="detalhesEmpresa"/>
-<c:url value="/formNovaEmpresa.jsp" var="linkAdicionaEmpresa"/>
+<c:url value="/entrada?acao=DetalhesEmpresa&" var="detalhesEmpresa"/>
+<c:url value="/entrada?acao=NovaEmpresaForm" var="linkAdicionaEmpresa"/>
    
 <!DOCTYPE html>
 <meta charset="ISO-8859-1">
