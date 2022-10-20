@@ -7,16 +7,22 @@
 <c:url value="/entrada?acao=RemoveEmpresa&" var="deletaEmpresa"/>
 <c:url value="/entrada?acao=DetalhesEmpresa&" var="detalhesEmpresa"/>
 <c:url value="/entrada?acao=NovaEmpresaForm" var="linkAdicionaEmpresa"/>
+<c:url value="/entrada?acao=Logout" var="linkLogout"/>
    
 <!DOCTYPE html>
 <meta charset="ISO-8859-1">
-<title>Mockup Basic CRUD Empresas</title>
+<title>Sistema de Empresas - Menu</title>
 <html>
 	<body>
 		<c:if test="${not empty empresa}">
 			Empresa ${empresa} cadastrada com sucesso!
 			<br />
 		</c:if>
+		
+	Usuario Logado : ${usuarioLogado.login} &nbsp; <a href="${linkLogout}">Sair</a> 
+	<br>
+	<br>
+
 		
 	Lista de empresas: <br />
 	 <ul>

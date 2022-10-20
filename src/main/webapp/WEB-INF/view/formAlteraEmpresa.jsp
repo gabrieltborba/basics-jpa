@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Detalhes Empresa - ${empresa.nome}</title>
+		<title>Sistema de Empresas - Detalhes: ${empresa.nome}</title>
 	</head>
 	<body>
 		<form action="${linkAlterarEmpresa}" method="post">

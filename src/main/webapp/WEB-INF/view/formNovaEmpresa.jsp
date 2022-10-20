@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Adicionar Nova Empresa</title>
+		<title>Sistema de Empresas - Nova Empresa</title>
 	</head>
 	<body>
 		<form action="${linkNovaEmpresa}" method="post">

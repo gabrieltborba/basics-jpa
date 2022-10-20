@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.gabrielborba.servlet.services.EmpresaService;
 
@@ -23,7 +24,6 @@ public class EmpresaController extends HttpServlet {
 	
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	
 		
 		List<String> nome = new ArrayList<String>() ;
 		nome = Arrays.asList(execute(req, resp).split(":"));
@@ -45,7 +45,17 @@ public class EmpresaController extends HttpServlet {
 		
 		String packageName = "br.com.gabrielborba.servlet.services.";
 		String paramAcao = req.getParameter("acao");
-		paramAcao = paramAcao == null ? "LoginForm":paramAcao;
+		
+		if(paramAcao == null) {
+	    	return "redirect:entrada?acao=LoginForm";
+	    }
+
+		HttpSession sessao = req.getSession();
+		boolean usuarioEstaLogado = (sessao.getAttribute("usuarioLogado") != null);
+		boolean ehUmaAcaoProtegida = !(paramAcao.equals("Login") || paramAcao.equals("LoginForm"));
+	    if(!usuarioEstaLogado && ehUmaAcaoProtegida) {
+	    	return "redirect:entrada?acao=LoginForm";
+	    }
 		
 		try {
 			Class<?> classe = Class.forName(packageName + paramAcao);

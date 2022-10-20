@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.gabrielborba.servlet.modelo.Banco;
 import br.com.gabrielborba.servlet.modelo.Empresa;
@@ -20,6 +21,7 @@ public class ListaEmpresas implements EmpresaService {
 	
 
 	    public String executa(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	    	    
     	System.out.println("listando empresas pelo executa");
 		Banco banco = new Banco();
 		List<Empresa> lista = banco.getEmpresas();
