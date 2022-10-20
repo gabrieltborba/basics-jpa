@@ -7,10 +7,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import br.com.gabrielborba.servlet.interfaces.InterfaceCommand;
 import br.com.gabrielborba.servlet.modelo.Banco;
 import br.com.gabrielborba.servlet.modelo.Usuario;
 
-public class Login implements EmpresaService {
+public class Login implements InterfaceCommand {
 
 	@Override
 	public String executa(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

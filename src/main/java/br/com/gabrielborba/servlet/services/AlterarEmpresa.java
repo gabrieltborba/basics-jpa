@@ -9,11 +9,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.gabrielborba.servlet.interfaces.InterfaceCommand;
 import br.com.gabrielborba.servlet.modelo.Banco;
 import br.com.gabrielborba.servlet.modelo.Empresa;
 
 
-public class AlterarEmpresa implements EmpresaService{
+public class AlterarEmpresa implements InterfaceCommand{
 	
 	private final long serialVersionUID = 1L;
        

@@ -7,7 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class Logout implements EmpresaService {
+import br.com.gabrielborba.servlet.interfaces.InterfaceCommand;
+
+public class Logout implements InterfaceCommand {
 
 	@Override
 	public String executa(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

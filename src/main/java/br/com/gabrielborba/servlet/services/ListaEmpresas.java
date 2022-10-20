@@ -11,11 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import br.com.gabrielborba.servlet.interfaces.InterfaceCommand;
 import br.com.gabrielborba.servlet.modelo.Banco;
 import br.com.gabrielborba.servlet.modelo.Empresa;
 
 
-public class ListaEmpresas implements EmpresaService {
+public class ListaEmpresas implements InterfaceCommand {
 	
 	private final long serialVersionUID = 1L;
 	

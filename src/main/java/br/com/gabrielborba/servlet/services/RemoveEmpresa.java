@@ -7,10 +7,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.gabrielborba.servlet.interfaces.InterfaceCommand;
 import br.com.gabrielborba.servlet.modelo.Banco;
 
 
-public class RemoveEmpresa implements EmpresaService{
+public class RemoveEmpresa implements InterfaceCommand{
 
 	private final long serialVersionUID = 1L;
 	

@@ -1,4 +1,4 @@
-package br.com.gabrielborba.servlet.services;
+package br.com.gabrielborba.servlet.services.forms;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -11,11 +11,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.gabrielborba.servlet.interfaces.InterfaceCommand;
 import br.com.gabrielborba.servlet.modelo.Banco;
 import br.com.gabrielborba.servlet.modelo.Empresa;
 
 
-public class NovaEmpresaForm implements EmpresaService {
+public class NovaEmpresaForm implements InterfaceCommand {
 	
 	private final long serialVersionUID = 1L;
        
